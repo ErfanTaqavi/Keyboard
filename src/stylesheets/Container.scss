@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+
+}
+
+@font-face {
+    font-family: Student;
+    src: url(../../font/TheStudentsTeacher-Regular.ttf);
+  }
+h1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family:  Student ; 
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+.Container {
+    background-color: rgb(30, 28, 42);
+    border: solid .5rem #d5d5d5 ;
+    box-shadow: -8px 8px 0px 0px rgb(105, 105, 105);
+    border-radius: 10px;
+    width: 34.5rem;
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.Rows{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.Row4{
+    justify-content: center !important;
+}

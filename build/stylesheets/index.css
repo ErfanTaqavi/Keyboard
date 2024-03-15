@@ -1,3 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
 
+@font-face {
+  font-family: Student;
+  src: url(../../font/TheStudentsTeacher-Regular.ttf);
+}
+h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: Student;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+.Container {
+  background-color: rgb(30, 28, 42);
+  border: solid 0.5rem #d5d5d5;
+  box-shadow: -8px 8px 0px 0px rgb(105, 105, 105);
+  border-radius: 10px;
+  width: 34.5rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Rows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Row4 {
+  justify-content: center !important;
+}
+
+.BR {
+  background-color: #f52d47;
+  border: outset 5px;
+  border-top-color: #f88b9a;
+  border-right-color: #f88b9a;
+  border-left-color: #bc4656;
+  border-bottom-color: #bc4656;
+  width: 4rem;
+  font-size: large;
+}
+
+.BY {
+  background-color: rgb(218, 228, 65);
+  border: outset 5px;
+  border-top-color: #e9fc7d;
+  border-right-color: #e9fc7d;
+  border-left-color: #a7b556;
+  border-bottom-color: #a7b556;
+  width: 2.8rem;
+  font-size: large;
+}
+
+#Bspace {
+  width: 98%;
+  background-color: aqua;
+  border: outset 5px;
+  border-top-color: #67eaf4;
+  border-right-color: #67eaf4;
+  border-left-color: #529d9d;
+  border-bottom-color: #529d9d;
+}
+
+.BG {
+  background-color: #7af52d;
+  border: outset 5px;
+  border-top-color: #a1f76c;
+  border-right-color: #a1f76c;
+  border-left-color: #75c047;
+  border-bottom-color: #75c047;
+  width: 6.5rem;
+  font-size: large;
+}
+
+button {
+  font-family: Student;
+  height: 2.5rem;
+  margin: 0.15rem;
+  border-radius: 5px;
+}
+
+.BW {
+  background-color: #e0e0dd;
+  border: outset 5px;
+  border-top-color: #f3f3f1;
+  border-right-color: #f3f3f1;
+  border-left-color: #c1c1c1;
+  border-bottom-color: #c1c1c1;
+  width: 2.5rem;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=index.css.map */
