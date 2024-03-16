@@ -6,7 +6,7 @@ const Line01 = document.querySelector('.line1')
 const line02 = document.querySelector('.line2')
 const line03 = document.querySelector('.line3')
 
-
+const Buttons = document.querySelectorAll('.Buttons')
 
 for (const letter in Line1) {
    let button = document.createElement('button');
@@ -28,3 +28,4 @@ for (const letter in Line3) {
     button.className ='Buttons BW'
     line03.appendChild(button);
 }
+

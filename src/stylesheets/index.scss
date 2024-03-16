@@ -5,7 +5,14 @@
 @import "Button_green";
 @import "Button_defult";
 @import "Button_white";
+@import "TextArea";
 
 
 
-
+:root {
+    --blue-color: aqua ; 
+    --yellow-color: #dae441;
+    --red-color : #f52d47;
+    --green-color: #7af52d;
+    --white-color : #e0e0dd;
+}
