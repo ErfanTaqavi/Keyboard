@@ -7,30 +7,31 @@
   </head>
   <body>
     <h1>Virtual Keyboard</h1>
-    <div ><input type="text" onkeypress="PressKey()" name="" id="inputs" class="TextArea"></div>
+    <div ><input type="text"  name="" id="input" class="TextArea"></div>
     <div class="Container">
+      <div id="Keyboard">
       <div class="Row1 Rows ">
-        <button class="Buttons BY" id="B~" >~</button>
+        <button class="Buttons BY" key-data="~" >~</button>
         <div class="line1">
         </div>
-        <button class="Buttons BY" id="Bq" >*</button>
+        <button class="Buttons BY" key-data="*" >*</button>
         
     </div>
       <div class="Row2 Rows">
-        <button class="Buttons BR" id="Bcap">Cap</button>
+        <button class="Buttons BR" key-data="Cap">Cap</button>
         <div class="line2"></div>
-        <button class=" Buttons BR" id="Ba" >Ent</button>
+        <button class=" Buttons BR" key-data="\n" >Ent</button>
       </div>
       <div class="Row3 Rows">
-        <button class="Buttons BG" id="Bshift" >Shift</button>
+        <button class="Buttons BG"  key-data="shift" >Shift</button>
         <div class="line3"></div>
-        <button class=" Buttons BG" id="Bz" >Shift</button>
+        <button class=" Buttons BG"  key-data="shift" >Shift</button>
       </div>
       <div class="Row4 Rows">
-        <button class=" Buttons BB" id="Bspace" ></button>
+        <button class=" Buttons BB"  key-data="\t" ></button>
       </div>
     </div>
-
+  </div>
     <script src="src/script.js"></script>
   </body>
 </html>
