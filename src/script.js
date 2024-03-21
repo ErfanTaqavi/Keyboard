@@ -113,12 +113,25 @@ Keyboard.addEventListener("click", function (event) {
   console.log(keyElement);
   if (keyElement) {
     letter = keyElement.getAttribute("key-data");
-    if (letter === 1) {
+    if (letter.length === 1) {
       ChangeBgColor(keyElement);
       WriteText(letter);
     }
     if (letter === "CapsLock") {
       caps(flag);
+      ChangeBgColor(keyElement);
+    }if(letter === "Enter"){
+      ChangeBgColor(keyElement);
+      WriteText("\n")
     }
+
+    // if (letter === "Shift") {
+    //   if (event.code === "ShiftLeft") {
+    //     ChangeBgColor(document.getElementById("ShiftLeft"));
+    //   }else if (event.code === "ShiftRight") {
+    //     ChangeBgColor(document.getElementById("ShiftRight"));
+
+    //   }
+    // }
   }
 });
