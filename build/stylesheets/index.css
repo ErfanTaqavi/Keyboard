@@ -102,6 +102,10 @@ button {
   --white-color: #b2b2b2;
 }
 
+.hidden {
+  display: none;
+}
+
 .BW {
   background-color: var(--white-color);
   border-top-color: #f3f3f1;
