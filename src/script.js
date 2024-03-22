@@ -12,6 +12,7 @@ const Line03 = document.querySelector(".line3");
 const Buttons = document.querySelectorAll(".Buttons");
 const Keyboard = document.getElementById("Keyboard");
 const Input = document.getElementById("input");
+const Shift = document.getElementById("Shift")
 
 const elements = document.getElementsByClassName("lowercase");
 const Uelements = document.getElementsByClassName("uppercase");
@@ -63,7 +64,7 @@ for (const lett in Line3UP) {
 }
 
 let letter;
-let flag = false;
+let Capsflag = true;
 
 function ChangeBgColor(key) {
   key.classList.add("active");
@@ -75,14 +76,14 @@ function WriteText(letter) {
   Input.value += letter;
 }
 function caps() {
-  flag = !flag;
+  Capsflag = !Capsflag;
 
-  if (flag === true) {
+  if (Capsflag === false) {
     for (let i = 0; i < elements.length; i++) {
       elements[i].classList.toggle("hidden");
       Uelements[i].classList.toggle("hidden");
     }
-  } else if (flag === false) {
+  } else if (Capsflag === true) {
     for (let i = 0; i < elements.length; i++) {
       Uelements[i].classList.toggle("hidden");
       elements[i].classList.toggle("hidden");
@@ -94,8 +95,10 @@ Input.addEventListener("keydown", function (event) {
   letter = event.key;
   console.log(event);
   if (letter === "CapsLock") {
-    caps(flag);
+    caps(Capsflag);
   }
+
+ 
 
   const keyElement = document.querySelector(`[key-data="${letter}"]`);
   if (event.code) {
@@ -118,20 +121,38 @@ Keyboard.addEventListener("click", function (event) {
       WriteText(letter);
     }
     if (letter === "CapsLock") {
-      caps(flag);
+      caps(Capsflag);
       ChangeBgColor(keyElement);
     }if(letter === "Enter"){
       ChangeBgColor(keyElement);
       WriteText("\n")
     }
-
-    // if (letter === "Shift") {
-    //   if (event.code === "ShiftLeft") {
-    //     ChangeBgColor(document.getElementById("ShiftLeft"));
-    //   }else if (event.code === "ShiftRight") {
-    //     ChangeBgColor(document.getElementById("ShiftRight"));
-
-    //   }
-    // }
   }
 });
+
+Input.addEventListener("keydown", function (event) {
+  let keyS = event.code
+  console.log(keyS)
+  const keyElement = document.querySelector(`[key-data="${keyS}"]`);
+  if (keyS ==="ShiftLeft"){
+    keyElement.classList.add("active");
+    caps()
+  }else if (keyS ==="ShiftRight"){
+    keyElement.classList.add("active");
+    caps()
+  }
+})
+
+Input.addEventListener("keyup", function (event) {
+  let keyS = event.code
+  console.log(keyS)
+  const keyElement = document.querySelector(`[key-data="${keyS}"]`);
+  if (keyS ==="ShiftLeft"){
+    caps()
+    keyElement.classList.remove("active");
+
+  }else if (keyS ==="ShiftRight"){
+    keyElement.classList.remove("active");
+    caps()
+  }
+})
