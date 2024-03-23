@@ -13,6 +13,7 @@ const Buttons = document.querySelectorAll(".Buttons");
 const Keyboard = document.getElementById("Keyboard");
 const Input = document.getElementById("input");
 const Shift = document.getElementById("Shift")
+const CpasLight = document.getElementById("CpasLight")
 
 const elements = document.getElementsByClassName("lowercase");
 const Uelements = document.getElementsByClassName("uppercase");
@@ -77,6 +78,7 @@ function WriteText(letter) {
 }
 function caps() {
   Capsflag = !Capsflag;
+  CpasLight.classList.toggle("Light")
 
   if (Capsflag === false) {
     for (let i = 0; i < elements.length; i++) {
@@ -96,14 +98,14 @@ Input.addEventListener("keydown", function (event) {
   console.log(event);
   if (letter === "CapsLock") {
     caps(Capsflag);
-  }
 
+  }
  
 
   const keyElement = document.querySelector(`[key-data="${letter}"]`);
   if (event.code) {
     if (keyElement) {
-      console.log(keyElement);
+      // console.log(keyElement);
       ChangeBgColor(keyElement);
     }
   }
@@ -113,7 +115,7 @@ Keyboard.addEventListener("click", function (event) {
   const keyElement = event.target.closest(".Buttons");
   // console.log(event)
 
-  console.log(keyElement);
+  // console.log(keyElement);
   if (keyElement) {
     letter = keyElement.getAttribute("key-data");
     if (letter.length === 1) {
@@ -126,12 +128,20 @@ Keyboard.addEventListener("click", function (event) {
     }if(letter === "Enter"){
       ChangeBgColor(keyElement);
       WriteText("\n")
+    }if(letter === "ShiftLeft"){
+      ChangeBgColor(keyElement);
+
+    }if(letter === "ShiftRight"){
+      ChangeBgColor(keyElement);
+
     }
   }
 });
 
+let ShiftFlag = true
 Input.addEventListener("keydown", function (event) {
   let keyS = event.code
+  if(ShiftFlag === true) {
   console.log(keyS)
   const keyElement = document.querySelector(`[key-data="${keyS}"]`);
   if (keyS ==="ShiftLeft"){
@@ -141,11 +151,14 @@ Input.addEventListener("keydown", function (event) {
     keyElement.classList.add("active");
     caps()
   }
+  ShiftFlag = false
+}
 })
 
 Input.addEventListener("keyup", function (event) {
   let keyS = event.code
-  console.log(keyS)
+ 
+  // console.log(keyS)
   const keyElement = document.querySelector(`[key-data="${keyS}"]`);
   if (keyS ==="ShiftLeft"){
     caps()
@@ -155,4 +168,6 @@ Input.addEventListener("keyup", function (event) {
     keyElement.classList.remove("active");
     caps()
   }
+  ShiftFlag = !ShiftFlag
+
 })

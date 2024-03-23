@@ -56,6 +56,25 @@ h1 {
   font-size: large;
 }
 
+#Caps {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#CpasLight {
+  width: 2.5px;
+  height: 2.5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.Light {
+  background-color: white !important;
+}
+
 .BY {
   background-color: var(--yellow-color);
   border-top-color: #e9fc7d;
