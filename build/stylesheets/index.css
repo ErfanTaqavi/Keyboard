@@ -56,6 +56,15 @@ h1 {
   font-size: large;
 }
 
+@media screen and (max-width: 768px) {
+  #Caps {
+    font-size: medium;
+  }
+  #CpasLight {
+    width: 2px;
+    height: 2px;
+  }
+}
 #Caps {
   display: flex;
   flex-direction: row;

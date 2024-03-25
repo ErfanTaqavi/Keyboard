@@ -12,8 +12,8 @@ const Line03 = document.querySelector(".line3");
 const Buttons = document.querySelectorAll(".Buttons");
 const Keyboard = document.getElementById("Keyboard");
 const Input = document.getElementById("input");
-const Shift = document.getElementById("Shift")
-const CpasLight = document.getElementById("CpasLight")
+const Shift = document.getElementById("Shift");
+const CpasLight = document.getElementById("CpasLight");
 
 const elements = document.getElementsByClassName("lowercase");
 const Uelements = document.getElementsByClassName("uppercase");
@@ -78,7 +78,7 @@ function WriteText(letter) {
 }
 function caps() {
   Capsflag = !Capsflag;
-  CpasLight.classList.toggle("Light")
+  CpasLight.classList.toggle("Light");
 
   if (Capsflag === false) {
     for (let i = 0; i < elements.length; i++) {
@@ -98,9 +98,7 @@ Input.addEventListener("keydown", function (event) {
   console.log(event);
   if (letter === "CapsLock") {
     caps(Capsflag);
-
   }
- 
 
   const keyElement = document.querySelector(`[key-data="${letter}"]`);
   if (event.code) {
@@ -125,49 +123,48 @@ Keyboard.addEventListener("click", function (event) {
     if (letter === "CapsLock") {
       caps(Capsflag);
       ChangeBgColor(keyElement);
-    }if(letter === "Enter"){
+    }
+    if (letter === "Enter") {
       ChangeBgColor(keyElement);
-      WriteText("\n")
-    }if(letter === "ShiftLeft"){
+      WriteText("\n");
+    }
+    if (letter === "ShiftLeft") {
       ChangeBgColor(keyElement);
-
-    }if(letter === "ShiftRight"){
+    }
+    if (letter === "ShiftRight") {
       ChangeBgColor(keyElement);
-
     }
   }
 });
 
-let ShiftFlag = true
+let ShiftFlag = true;
 Input.addEventListener("keydown", function (event) {
-  let keyS = event.code
-  if(ShiftFlag === true) {
-  console.log(keyS)
-  const keyElement = document.querySelector(`[key-data="${keyS}"]`);
-  if (keyS ==="ShiftLeft"){
-    keyElement.classList.add("active");
-    caps()
-  }else if (keyS ==="ShiftRight"){
-    keyElement.classList.add("active");
-    caps()
+  let keyS = event.code;
+  if (ShiftFlag === true) {
+    console.log(keyS);
+    const keyElement = document.querySelector(`[key-data="${keyS}"]`);
+    if (keyS === "ShiftLeft") {
+      keyElement.classList.add("active");
+      caps();
+    } else if (keyS === "ShiftRight") {
+      keyElement.classList.add("active");
+      caps();
+    }
+    ShiftFlag = false;
   }
-  ShiftFlag = false
-}
-})
+});
 
 Input.addEventListener("keyup", function (event) {
-  let keyS = event.code
- 
+  let keyS = event.code;
+
   // console.log(keyS)
   const keyElement = document.querySelector(`[key-data="${keyS}"]`);
-  if (keyS ==="ShiftLeft"){
-    caps()
+  if (keyS === "ShiftLeft") {
+    caps();
     keyElement.classList.remove("active");
-
-  }else if (keyS ==="ShiftRight"){
+  } else if (keyS === "ShiftRight") {
     keyElement.classList.remove("active");
-    caps()
+    caps();
   }
-  ShiftFlag = !ShiftFlag
-
-})
+  ShiftFlag = !ShiftFlag;
+});
